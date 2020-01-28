@@ -1,0 +1,3 @@
+/home/kobi/Desktop/opencvstuff/CMakeFiles/rebuild_cache.dir
+/home/kobi/Desktop/opencvstuff/CMakeFiles/LittleBrother.dir
+/home/kobi/Desktop/opencvstuff/CMakeFiles/edit_cache.dir
