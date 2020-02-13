@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
 project( LittleBrother )
 find_package( OpenCV REQUIRED )
-add_executable( LittleBrother first.cpp )
+add_executable( LittleBrother LittleBrother.cpp )
 target_link_libraries( LittleBrother ${OpenCV_LIBS} )

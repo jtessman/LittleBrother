@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kobi/Desktop/opencvstuff
+CMAKE_SOURCE_DIR = /home/kobi/Desktop/LittleBrother/opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kobi/Desktop/opencvstuff
+CMAKE_BINARY_DIR = /home/kobi/Desktop/LittleBrother/opencv
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobi/Desktop/opencvstuff/CMakeFiles /home/kobi/Desktop/opencvstuff/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobi/Desktop/LittleBrother/opencv/CMakeFiles /home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobi/Desktop/opencvstuff/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kobi/Desktop/LittleBrother/opencv/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,32 +123,32 @@ LittleBrother/fast:
 	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/build
 .PHONY : LittleBrother/fast
 
-first.o: first.cpp.o
+LittleBrother.o: LittleBrother.cpp.o
 
-.PHONY : first.o
+.PHONY : LittleBrother.o
 
 # target to build an object file
-first.cpp.o:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/first.cpp.o
-.PHONY : first.cpp.o
+LittleBrother.cpp.o:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o
+.PHONY : LittleBrother.cpp.o
 
-first.i: first.cpp.i
+LittleBrother.i: LittleBrother.cpp.i
 
-.PHONY : first.i
+.PHONY : LittleBrother.i
 
 # target to preprocess a source file
-first.cpp.i:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/first.cpp.i
-.PHONY : first.cpp.i
+LittleBrother.cpp.i:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.i
+.PHONY : LittleBrother.cpp.i
 
-first.s: first.cpp.s
+LittleBrother.s: LittleBrother.cpp.s
 
-.PHONY : first.s
+.PHONY : LittleBrother.s
 
 # target to generate assembly for a file
-first.cpp.s:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/first.cpp.s
-.PHONY : first.cpp.s
+LittleBrother.cpp.s:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.s
+.PHONY : LittleBrother.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... LittleBrother"
 	@echo "... edit_cache"
-	@echo "... first.o"
-	@echo "... first.i"
-	@echo "... first.s"
+	@echo "... LittleBrother.o"
+	@echo "... LittleBrother.i"
+	@echo "... LittleBrother.s"
 .PHONY : help
 
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kobi/Desktop/opencvstuff
+CMAKE_SOURCE_DIR = /home/kobi/Desktop/LittleBrother/opencv
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kobi/Desktop/opencvstuff
+CMAKE_BINARY_DIR = /home/kobi/Desktop/LittleBrother/opencv
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LittleBrother.dir/depend.make
@@ -57,38 +57,38 @@ include CMakeFiles/LittleBrother.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/LittleBrother.dir/flags.make
 
-CMakeFiles/LittleBrother.dir/first.cpp.o: CMakeFiles/LittleBrother.dir/flags.make
-CMakeFiles/LittleBrother.dir/first.cpp.o: first.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kobi/Desktop/opencvstuff/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LittleBrother.dir/first.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LittleBrother.dir/first.cpp.o -c /home/kobi/Desktop/opencvstuff/first.cpp
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o: CMakeFiles/LittleBrother.dir/flags.make
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o: LittleBrother.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o -c /home/kobi/Desktop/LittleBrother/opencv/LittleBrother.cpp
 
-CMakeFiles/LittleBrother.dir/first.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LittleBrother.dir/first.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kobi/Desktop/opencvstuff/first.cpp > CMakeFiles/LittleBrother.dir/first.cpp.i
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LittleBrother.dir/LittleBrother.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kobi/Desktop/LittleBrother/opencv/LittleBrother.cpp > CMakeFiles/LittleBrother.dir/LittleBrother.cpp.i
 
-CMakeFiles/LittleBrother.dir/first.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LittleBrother.dir/first.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kobi/Desktop/opencvstuff/first.cpp -o CMakeFiles/LittleBrother.dir/first.cpp.s
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LittleBrother.dir/LittleBrother.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kobi/Desktop/LittleBrother/opencv/LittleBrother.cpp -o CMakeFiles/LittleBrother.dir/LittleBrother.cpp.s
 
-CMakeFiles/LittleBrother.dir/first.cpp.o.requires:
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.requires:
 
-.PHONY : CMakeFiles/LittleBrother.dir/first.cpp.o.requires
+.PHONY : CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.requires
 
-CMakeFiles/LittleBrother.dir/first.cpp.o.provides: CMakeFiles/LittleBrother.dir/first.cpp.o.requires
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/first.cpp.o.provides.build
-.PHONY : CMakeFiles/LittleBrother.dir/first.cpp.o.provides
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.provides: CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.requires
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.provides.build
+.PHONY : CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.provides
 
-CMakeFiles/LittleBrother.dir/first.cpp.o.provides.build: CMakeFiles/LittleBrother.dir/first.cpp.o
+CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.provides.build: CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o
 
 
 # Object files for target LittleBrother
 LittleBrother_OBJECTS = \
-"CMakeFiles/LittleBrother.dir/first.cpp.o"
+"CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o"
 
 # External object files for target LittleBrother
 LittleBrother_EXTERNAL_OBJECTS =
 
-LittleBrother: CMakeFiles/LittleBrother.dir/first.cpp.o
+LittleBrother: CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o
 LittleBrother: CMakeFiles/LittleBrother.dir/build.make
 LittleBrother: /usr/local/lib/libopencv_videostab.so.3.1.0
 LittleBrother: /usr/local/lib/libopencv_superres.so.3.1.0
@@ -107,7 +107,7 @@ LittleBrother: /usr/local/lib/libopencv_video.so.3.1.0
 LittleBrother: /usr/local/lib/libopencv_imgproc.so.3.1.0
 LittleBrother: /usr/local/lib/libopencv_core.so.3.1.0
 LittleBrother: CMakeFiles/LittleBrother.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kobi/Desktop/opencvstuff/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LittleBrother"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable LittleBrother"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LittleBrother.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -115,7 +115,7 @@ CMakeFiles/LittleBrother.dir/build: LittleBrother
 
 .PHONY : CMakeFiles/LittleBrother.dir/build
 
-CMakeFiles/LittleBrother.dir/requires: CMakeFiles/LittleBrother.dir/first.cpp.o.requires
+CMakeFiles/LittleBrother.dir/requires: CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o.requires
 
 .PHONY : CMakeFiles/LittleBrother.dir/requires
 
@@ -124,6 +124,6 @@ CMakeFiles/LittleBrother.dir/clean:
 .PHONY : CMakeFiles/LittleBrother.dir/clean
 
 CMakeFiles/LittleBrother.dir/depend:
-	cd /home/kobi/Desktop/opencvstuff && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kobi/Desktop/opencvstuff /home/kobi/Desktop/opencvstuff /home/kobi/Desktop/opencvstuff /home/kobi/Desktop/opencvstuff /home/kobi/Desktop/opencvstuff/CMakeFiles/LittleBrother.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kobi/Desktop/LittleBrother/opencv && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kobi/Desktop/LittleBrother/opencv /home/kobi/Desktop/LittleBrother/opencv /home/kobi/Desktop/LittleBrother/opencv /home/kobi/Desktop/LittleBrother/opencv /home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/LittleBrother.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LittleBrother.dir/depend
 

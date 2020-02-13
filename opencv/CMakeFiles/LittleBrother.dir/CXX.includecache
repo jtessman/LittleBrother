@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/kobi/Desktop/opencvstuff/first.cpp
+/home/kobi/Desktop/LittleBrother/opencv/LittleBrother.cpp
 stdio.h
 -
 opencv2/opencv.hpp
@@ -14,6 +14,8 @@ opencv2/opencv.hpp
 opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
+-
+GL/glut.h
 -
 iostream
 -
