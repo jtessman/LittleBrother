@@ -1,4 +1,4 @@
-# Install script for directory: /home/kobi/Desktop/LittleBrother/opencv
+# Install script for directory: /home/jacob/Desktop/LittleBrother/opencv
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/kobi/Desktop/LittleBrother/opencv/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jacob/Desktop/LittleBrother/opencv/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
