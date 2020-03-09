@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o"
+  "CMakeFiles/LittleBrother.dir/lbwindow.cpp.o"
   "LittleBrother.pdb"
   "LittleBrother"
 )
