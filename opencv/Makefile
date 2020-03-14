@@ -123,32 +123,32 @@ LittleBrother/fast:
 	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/build
 .PHONY : LittleBrother/fast
 
-LittleBrother.o: LittleBrother.cpp.o
+feed.o: feed.cpp.o
 
-.PHONY : LittleBrother.o
+.PHONY : feed.o
 
 # target to build an object file
-LittleBrother.cpp.o:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o
-.PHONY : LittleBrother.cpp.o
+feed.cpp.o:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/feed.cpp.o
+.PHONY : feed.cpp.o
 
-LittleBrother.i: LittleBrother.cpp.i
+feed.i: feed.cpp.i
 
-.PHONY : LittleBrother.i
+.PHONY : feed.i
 
 # target to preprocess a source file
-LittleBrother.cpp.i:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.i
-.PHONY : LittleBrother.cpp.i
+feed.cpp.i:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/feed.cpp.i
+.PHONY : feed.cpp.i
 
-LittleBrother.s: LittleBrother.cpp.s
+feed.s: feed.cpp.s
 
-.PHONY : LittleBrother.s
+.PHONY : feed.s
 
 # target to generate assembly for a file
-LittleBrother.cpp.s:
-	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/LittleBrother.cpp.s
-.PHONY : LittleBrother.cpp.s
+feed.cpp.s:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/feed.cpp.s
+.PHONY : feed.cpp.s
 
 lbwindow.o: lbwindow.cpp.o
 
@@ -177,6 +177,33 @@ lbwindow.cpp.s:
 	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/lbwindow.cpp.s
 .PHONY : lbwindow.cpp.s
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/LittleBrother.dir/build.make CMakeFiles/LittleBrother.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -186,12 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... LittleBrother"
 	@echo "... edit_cache"
-	@echo "... LittleBrother.o"
-	@echo "... LittleBrother.i"
-	@echo "... LittleBrother.s"
+	@echo "... feed.o"
+	@echo "... feed.i"
+	@echo "... feed.s"
 	@echo "... lbwindow.o"
 	@echo "... lbwindow.i"
 	@echo "... lbwindow.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

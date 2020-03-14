@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/kobi/Desktop/LittleBrother/opencv/LittleBrother.cpp" "/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o"
+  "/home/kobi/Desktop/LittleBrother/opencv/feed.cpp" "/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/LittleBrother.dir/feed.cpp.o"
   "/home/kobi/Desktop/LittleBrother/opencv/lbwindow.cpp" "/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/LittleBrother.dir/lbwindow.cpp.o"
+  "/home/kobi/Desktop/LittleBrother/opencv/main.cpp" "/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles/LittleBrother.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

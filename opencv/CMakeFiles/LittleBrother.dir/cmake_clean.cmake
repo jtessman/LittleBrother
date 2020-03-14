@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/LittleBrother.dir/LittleBrother.cpp.o"
+  "CMakeFiles/LittleBrother.dir/main.cpp.o"
   "CMakeFiles/LittleBrother.dir/lbwindow.cpp.o"
+  "CMakeFiles/LittleBrother.dir/feed.cpp.o"
   "LittleBrother.pdb"
   "LittleBrother"
 )
