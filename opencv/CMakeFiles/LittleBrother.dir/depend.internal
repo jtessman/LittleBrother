@@ -662,8 +662,13 @@ CMakeFiles/LittleBrother.dir/feed.cpp.o
  /usr/include/gtk-2.0/gtk/gtkvseparator.h
  /usr/include/gtk-2.0/gtk/gtkwidget.h
  /usr/include/gtk-2.0/gtk/gtkwindow.h
+ /usr/include/gtkmm-2.4/gtkmm/alignment.h
  /usr/include/gtkmm-2.4/gtkmm/base.h
+ /usr/include/gtkmm-2.4/gtkmm/bin.h
+ /usr/include/gtkmm-2.4/gtkmm/box.h
+ /usr/include/gtkmm-2.4/gtkmm/button.h
  /usr/include/gtkmm-2.4/gtkmm/clipboard.h
+ /usr/include/gtkmm-2.4/gtkmm/container.h
  /usr/include/gtkmm-2.4/gtkmm/enums.h
  /usr/include/gtkmm-2.4/gtkmm/iconset.h
  /usr/include/gtkmm-2.4/gtkmm/iconsource.h
@@ -1478,6 +1483,7 @@ CMakeFiles/LittleBrother.dir/lbwindow.cpp.o
  /usr/include/gtk-2.0/gtk/gtkvseparator.h
  /usr/include/gtk-2.0/gtk/gtkwidget.h
  /usr/include/gtk-2.0/gtk/gtkwindow.h
+ /usr/include/gtkmm-2.4/gtkmm/alignment.h
  /usr/include/gtkmm-2.4/gtkmm/base.h
  /usr/include/gtkmm-2.4/gtkmm/bin.h
  /usr/include/gtkmm-2.4/gtkmm/box.h
@@ -1488,10 +1494,12 @@ CMakeFiles/LittleBrother.dir/lbwindow.cpp.o
  /usr/include/gtkmm-2.4/gtkmm/iconset.h
  /usr/include/gtkmm-2.4/gtkmm/iconsource.h
  /usr/include/gtkmm-2.4/gtkmm/image.h
+ /usr/include/gtkmm-2.4/gtkmm/main.h
  /usr/include/gtkmm-2.4/gtkmm/misc.h
  /usr/include/gtkmm-2.4/gtkmm/object.h
  /usr/include/gtkmm-2.4/gtkmm/rc.h
  /usr/include/gtkmm-2.4/gtkmm/selectiondata.h
+ /usr/include/gtkmm-2.4/gtkmm/separator.h
  /usr/include/gtkmm-2.4/gtkmm/stockid.h
  /usr/include/gtkmm-2.4/gtkmm/style.h
  /usr/include/gtkmm-2.4/gtkmm/targetentry.h
@@ -2299,6 +2307,7 @@ CMakeFiles/LittleBrother.dir/main.cpp.o
  /usr/include/gtk-2.0/gtk/gtkvseparator.h
  /usr/include/gtk-2.0/gtk/gtkwidget.h
  /usr/include/gtk-2.0/gtk/gtkwindow.h
+ /usr/include/gtkmm-2.4/gtkmm/alignment.h
  /usr/include/gtkmm-2.4/gtkmm/base.h
  /usr/include/gtkmm-2.4/gtkmm/bin.h
  /usr/include/gtkmm-2.4/gtkmm/box.h
@@ -2314,6 +2323,7 @@ CMakeFiles/LittleBrother.dir/main.cpp.o
  /usr/include/gtkmm-2.4/gtkmm/object.h
  /usr/include/gtkmm-2.4/gtkmm/rc.h
  /usr/include/gtkmm-2.4/gtkmm/selectiondata.h
+ /usr/include/gtkmm-2.4/gtkmm/separator.h
  /usr/include/gtkmm-2.4/gtkmm/stockid.h
  /usr/include/gtkmm-2.4/gtkmm/style.h
  /usr/include/gtkmm-2.4/gtkmm/targetentry.h

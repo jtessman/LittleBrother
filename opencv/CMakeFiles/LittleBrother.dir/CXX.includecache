@@ -11,13 +11,27 @@ feed.h
 /home/kobi/Desktop/LittleBrother/opencv/feed.h
 iostream
 -
+gtkmm/button.h
+-
+gtkmm/box.h
+-
+cairomm/context.h
+-
 
 /home/kobi/Desktop/LittleBrother/opencv/feed.h
 gtkmm/image.h
 -
+gtkmm/box.h
+-
 opencv2/highgui/highgui.hpp
 -
 opencv2/imgproc/imgproc.hpp
+-
+gtkmm/alignment.h
+-
+gtkmm/button.h
+-
+queue
 -
 
 /home/kobi/Desktop/LittleBrother/opencv/lbwindow.cpp
@@ -25,9 +39,11 @@ lbwindow.h
 /home/kobi/Desktop/LittleBrother/opencv/lbwindow.h
 feed.h
 /home/kobi/Desktop/LittleBrother/opencv/feed.h
-pthread.h
--
 iostream
+-
+gtkmm/main.h
+-
+gdkmm/pixmap.h
 -
 
 /home/kobi/Desktop/LittleBrother/opencv/lbwindow.h
@@ -37,10 +53,10 @@ gtkmm/button.h
 -
 gtkmm/window.h
 -
+gtkmm/separator.h
+-
 feed.h
 /home/kobi/Desktop/LittleBrother/opencv/feed.h
-pthread.h
--
 
 /home/kobi/Desktop/LittleBrother/opencv/main.cpp
 opencv2/highgui/highgui.hpp
@@ -50,8 +66,6 @@ opencv2/imgproc/imgproc.hpp
 iostream
 -
 gtkmm/main.h
--
-gdkmm/pixbuf.h
 -
 lbwindow.h
 /home/kobi/Desktop/LittleBrother/opencv/lbwindow.h
@@ -5190,6 +5204,14 @@ gtk/gtkaccelgroup.h
 gtk/gtkbin.h
 -
 
+/usr/include/gtkmm-2.4/gtkmm/alignment.h
+glibmm/ustring.h
+-
+sigc++/sigc++.h
+-
+gtkmm/bin.h
+-
+
 /usr/include/gtkmm-2.4/gtkmm/base.h
 glibmm/utility.h
 -
@@ -5348,6 +5370,14 @@ glibmm/ustring.h
 sigc++/sigc++.h
 -
 gdkmm/display.h
+-
+
+/usr/include/gtkmm-2.4/gtkmm/separator.h
+glibmm/ustring.h
+-
+sigc++/sigc++.h
+-
+gtkmm/widget.h
 -
 
 /usr/include/gtkmm-2.4/gtkmm/stockid.h
