@@ -1,3 +1,13 @@
+/**
+* feed.h
+*
+* Jacob "Kobi" Tessman
+*
+* Last modified 4/1/2020
+*
+* The header file for the Feed object.
+*/
+
 #ifndef FEED_H
 #define FEED_H
 
@@ -17,20 +27,21 @@ public:
   virtual ~Feed();
   void set_hw(int h, int w);
   void connect();
+  void set_mode();
   void disconnect();
-  bool refresh(void);
+  bool refresh();
   void set_buttons();
   void set_device_id(int i);
+  void capture_iterate(int noise);
 
 private:
+  bool noise, connected, catching_frames;
   Gtk::Alignment recording_align;
   Gtk::Image cur_frame;
   Gtk::Image recording;
-  Gtk::Button detect, forget;
+  Gtk::Button b_detect, b_forget;
   Gtk::HBox feed_buttons;
-  bool connected;
-  bool catching_frames;
-  int width, height, cam_ID, frames_caught;
+  int width, height, cam_ID, seconds_recording, default_num_gs_frames, frames_caught;
   std::queue<cv::Mat> pastframes;
   cv::Mat frame, empty_mat;
   cv::Mat resized;

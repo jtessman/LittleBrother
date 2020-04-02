@@ -1,3 +1,15 @@
+/**
+* lbwindow.h
+*
+* Jacob "Kobi" Tessman
+*
+* Last modified: 4/1/2020
+*
+* The header file for the Feed object. The Feed object takes care of the
+* cameras.
+*/
+
+
 #ifndef LBWINDOW_H
 #define LBWINDOW_H
 
@@ -23,14 +35,11 @@ protected:
   Gtk::HBox button_box, feeds_1_and_2, feeds_3_and_4;
   Gtk::VBox main_box;
   Gtk::Image image_logo;
-  Gtk::Button b_fullscreen, b_cameranumber, b_quit;
+  Gtk::Button b_fullscreen, b_cameranumber, b_recording, b_quit;
   Gtk::HSeparator s_feed_middle, s_buttons;
   Gtk::VSeparator s_feed_top, s_feed_bottom;
-  //Although we have 4 feed objects, they're only taking up
-  //cpu power when the user decides they want more than one camera
-  //running.
   Feed feeds[4];
-  bool full; //fullscreen
+  bool full;
   int numcams;
 
 };
