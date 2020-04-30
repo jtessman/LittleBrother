@@ -17,6 +17,7 @@
 #include <gtkmm/button.h>
 #include <gtkmm/window.h>
 #include <gtkmm/separator.h>
+#include <gtkmm/entry.h>
 #include "feed.h"
 
 
@@ -29,13 +30,16 @@ public:
 protected:
   virtual void on_fullscreen_clicked();
   virtual void on_quit_clicked();
+  virtual void on_choose_folder_clicked();
   virtual void on_numcams_clicked();
+  virtual void on_choose_email_clicked();
   virtual void configure_buttons();
   virtual void configure_feed();
-  Gtk::HBox button_box, feeds_1_and_2, feeds_3_and_4;
+  Gtk::Entry email_entry;
+  Gtk::HBox button_box_top, button_box_bottom, feeds_1_and_2, feeds_3_and_4;
   Gtk::VBox main_box;
   Gtk::Image image_logo;
-  Gtk::Button b_fullscreen, b_cameranumber, b_recording, b_quit;
+  Gtk::Button b_fullscreen, b_cameranumber, b_recording, b_choose_folder, b_quit;
   Gtk::HSeparator s_feed_middle, s_buttons;
   Gtk::VSeparator s_feed_top, s_feed_bottom;
   Feed feeds[4];

@@ -13,6 +13,7 @@
 #include <iostream>
 #include <gtkmm/main.h>
 #include "lbwindow.h"
+#include <ctime>
 
 
 /**
@@ -27,6 +28,7 @@
 */
 int main(int argc, char * argv[])
 {
+
 
 	Gtk::Main kit(argc, argv);
 	LBwindow * lbwindow = new LBwindow();

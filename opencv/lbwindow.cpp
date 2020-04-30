@@ -13,6 +13,10 @@
 #include <iostream>
 #include <gtkmm/main.h>
 #include <gdkmm/pixmap.h>
+#include <gtkmm/filechooserdialog.h>
+#include <gtkmm/filechooser.h>
+#include <gtkmm/filechooserwidget.h>
+#include <gtkmm/entry.h>
 
 /**
 * LBwindow
@@ -29,14 +33,15 @@ LBwindow::LBwindow()
   // number of initial cameras
   numcams = 1;
 
-
   image_logo.set("../Logo.png");
   modify_bg_pixmap(Gtk::STATE_NORMAL, "../screen.jpg");
 
   // labels on all buttons
   b_fullscreen.set_label("Fullscreen");
   b_quit.set_label("Quit");
+  b_choose_folder.set_label("/home/kobi/Desktop/MotionVideos/"); //default on startup
   b_cameranumber.set_label("Number of cameras: 1");
+  email_entry.set_text("kobi.tessman@gmail.com"); //default on startup
 
 
   set_border_width(30);
@@ -44,14 +49,16 @@ LBwindow::LBwindow()
   image_logo.show();
   main_box.pack_start(image_logo);
   this->configure_feed();
-  main_box.pack_start(button_box);
+  main_box.pack_start(button_box_top);
+  main_box.pack_start(button_box_bottom);
 
   add(main_box);
   full = false;
 
   this->configure_buttons();
   main_box.show();
-  button_box.show();
+  button_box_top.show();
+  button_box_bottom.show();
 
 }
 
@@ -163,6 +170,82 @@ void LBwindow::on_quit_clicked()
 }
 
 /**
+* on_choose_email_clicked()
+*
+* input: none
+*
+* output: none
+*
+* The function that gets signalled when the user presses "enter" on the email
+* entry on the lbwindow. Iterates through all of the feeds and changes the
+* default email. Has no error checking, maybe a future feature.
+*/
+void LBwindow::on_choose_email_clicked()
+{
+  std::string new_email = email_entry.get_text();
+  std::cout << "Changed the email address to " << new_email << std::endl;
+
+  for(int i = 0; i < 4; i++)
+  {
+    feeds[i].feed_change_email(new_email);
+  }
+
+}
+
+/**
+* on_choose_folder_clicked
+*
+* input: none
+*
+* output: none
+*
+* When the folder button is clicked, a window pops up and allows the user to
+* pick a new folder for the saved videos and pictures. It has built in error
+* chekcing. Iterates through all of the feeds and changes the emails, and
+* rebrands the button to have the folder name.
+*/
+void LBwindow::on_choose_folder_clicked()
+{
+  Gtk::FileChooserDialog dialog("Please choose a folder",
+  Gtk::FILE_CHOOSER_ACTION_SELECT_FOLDER);
+  dialog.set_transient_for(*this);
+  //Add response buttons the the dialog:
+  dialog.add_button("Cancel", Gtk::RESPONSE_CANCEL);
+  dialog.add_button("Select", Gtk::RESPONSE_OK);
+  int result = dialog.run();
+  //Handle the response:
+  switch(result)
+  {
+      case(Gtk::RESPONSE_OK):
+      {
+        std::cout << "Select clicked." << std::endl;
+        std::cout << "Folder selected: " << dialog.get_filename()
+        << std::endl;
+
+        std::string new_folder_name = dialog.get_filename() + "/";
+
+        for(int i = 0; i < 4; i++)
+        {
+          feeds[i].feed_change_folder(new_folder_name);
+        }
+        b_choose_folder.set_label(new_folder_name);
+
+        break;
+      }
+      case(Gtk::RESPONSE_CANCEL):
+      {
+        std::cout << "Cancel clicked." << std::endl;
+        break;
+      }
+      default:
+      {
+        std::cout << "Unexpected button clicked." << std::endl;
+        break;
+      }
+  }
+
+}
+/**
 * configure_buttons
 *
 * input: none
@@ -178,17 +261,27 @@ void LBwindow::configure_buttons()
     //configure all buttons
     b_fullscreen.signal_clicked().
     connect(sigc::mem_fun(*this, &LBwindow::on_fullscreen_clicked));
-    button_box.pack_start(b_fullscreen);
+    button_box_top.pack_start(b_fullscreen);
     b_fullscreen.show();
 
     b_cameranumber.signal_clicked().
     connect(sigc::mem_fun(*this, &LBwindow::on_numcams_clicked));
-    button_box.pack_start(b_cameranumber);
+    button_box_top.pack_start(b_cameranumber);
     b_cameranumber.show();
+
+    b_choose_folder.signal_clicked().
+    connect(sigc::mem_fun(*this, &LBwindow::on_choose_folder_clicked));
+    button_box_bottom.pack_start(b_choose_folder);
+    b_choose_folder.show();
+
+    email_entry.signal_activate().
+    connect(sigc::mem_fun(*this, &LBwindow::on_choose_email_clicked));
+    button_box_bottom.pack_start(email_entry);
+    email_entry.show();
 
     b_quit.signal_clicked().
     connect(sigc::mem_fun(*this, &LBwindow::on_quit_clicked));
-    button_box.pack_start(b_quit);
+    button_box_top.pack_start(b_quit);
     b_quit.show();
 }
 

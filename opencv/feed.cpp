@@ -10,7 +10,11 @@
 #include <iostream>
 #include <gtkmm/button.h>
 #include <gtkmm/box.h>
+#include <gtkmm/messagedialog.h>
 #include <cairomm/context.h>
+#include <ctime>
+#include <stdio.h>
+#include <string.h>
 
 
 /**
@@ -42,6 +46,8 @@ Feed::Feed()
     seconds_recording = 100; //4 seconds by default
     catching_frames = false;
     noise = false;
+    user_email_address = "kobi.tessman@gmail.com"; //default on startup
+    user_folder = "/home/kobi/Desktop/MotionVideos/"; //default on startup
 }
 
 /**
@@ -65,11 +71,19 @@ Feed::~Feed()
 *
 * input: none
 *
-* output: none
+* output: bool
 *
 * The core functionality of the Feed object. This function is called in the
 * background every 20 ms to refresh the camera frame as well as do any of the
-* detection work.
+* detection work. If the program is currently detecting, then add the frame to
+* the feed object's VideoWriter. If the noise that was calculated is above
+* 2000000 AND the program is detecting, then the program is now detecting. In
+* order to calculate the feed, pop one gray frame off the end of the array and
+* push the new gray frame on. Compare the old gray frame with the new gray frame.
+* The file writing work used to be its own seperate function, but the function
+* needed to be able to save the current frame with the exact same date and time
+* as the video. Hence this function is longer than I'd like, but what can you
+* do. Returns true or false depending on whether or not the frame got caught. 
 */
 bool Feed::refresh()
 {
@@ -112,18 +126,68 @@ bool Feed::refresh()
           pastframes.pop();
       }
 
+      cv::Mat written_frame;
+      cv::cvtColor(resized, written_frame, CV_BGR2RGB);
 
-      capture_iterate(noise);
+      if(catching_frames == true)
+      {
+        video.write(written_frame);
+      }
 
       cur_frame.set(img);
       cv::waitKey();
+
+      if(catching_frames == false && noise > 2000000)
+      {
+
+        catching_frames = true;
+        recording.set("../record-ON.png");
+
+        time_t rawtime;
+        struct tm * timeinfo;
+        char buffer[80];
+
+        time (&rawtime);
+        timeinfo = localtime(&rawtime);
+
+        strftime(buffer,sizeof(buffer),"%d-%m-%Y-%H:%M:%S",timeinfo);
+        std::string str(buffer);
+
+        //potential bug here where the user might change the folder name
+        //the millisecond that the in between lines 150 and 151.
+        std::string video_filename = user_folder + str + ".avi";
+        std::string picture_filename = user_folder + str + ".png";
+        std::cout << picture_filename << std::endl;
+        std::cout << video_filename << std::endl;
+        cv::imwrite(picture_filename, written_frame),
+        this->email_notification(picture_filename, str);
+        video = cv::VideoWriter(video_filename, CV_FOURCC('M', 'J', 'P', 'G'), 30, cv::Size(width, height));
+
+        std::cout  << str << std::endl;
+
+
+        frames_caught = seconds_recording;
+      }
+
+      if(catching_frames == true)
+      {
+        frames_caught--;
+        if(frames_caught <= 0)
+        {
+          catching_frames = false;
+          recording.set("../record-OFF.png");
+        }
+      }
+
       return true;
+
+
     }
     else
     {
       this->disconnect();
     }
-
+    return false;
 }
 
 /**
@@ -166,39 +230,6 @@ void Feed::set_mode()
 }
 
 /**
-* capture iterate
-*
-* input: int noise
-*
-* output: none
-*
-* Given the amount of "noise" between the current frame and the last frame,
-* decides whether to put the Feed object in capturing mode (if it's not already)
-* depending on how large it is. 600000 seems to be a good number.
-*/
-void Feed::capture_iterate(int noise)
-{
-
-  if(catching_frames == false && noise > 600000)
-  {
-    catching_frames = true;
-    recording.set("../record-ON.png");
-    frames_caught = seconds_recording;
-  }
-
-  if(catching_frames == true)
-  {
-    frames_caught--;
-    if(frames_caught <= 0)
-    {
-      catching_frames = false;
-      recording.set("../record-OFF.png");
-    }
-  }
-
-}
-
-/**
 * disconnect
 *
 * input: none
@@ -221,6 +252,18 @@ void Feed::disconnect()
   }
 }
 
+
+/**
+* connect
+*
+* input: none
+*
+* output: none
+*
+* The function that is called whenever the user presses the "Disconnect" button
+* on the feed. If the camera is connected, free it, and then set the presented
+* image back accordingly.
+*/
 void Feed::connect()
 {
   frames_caught = 0;
@@ -237,8 +280,13 @@ void Feed::connect()
   }
   else
   {
-    std::cout << "Could not open /dev/video/" << cam_ID << std::endl;
+    Gtk::MessageDialog dialog("Error", false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK, false);
+    std::string message = "Could not open/dev/video/" + std::to_string(cam_ID);
+    std::cout << message << std::endl;
+        dialog.set_secondary_text(message);
+        dialog.run();
   }
+
 }
 
 /**
@@ -287,4 +335,65 @@ void Feed::set_hw(int h, int w)
   height = h;
   width = w;
 
+}
+
+/**
+* email_notification
+*
+* input: string filename, string date_and_time
+*
+* output: none
+*
+* The function that assembles the mutt command into a string from the filename
+* of the file to be attached and the date and time (combined into one string)
+* and then makes it run in the background on linux.
+*/
+void Feed::email_notification(std::string filename, std::string date_and_time)
+{
+  //This is horrendous, but the popen function only takes char pointers and
+  //not strings.
+  std::string email = "echo \"Picture of motion:\" | mutt -a \""
+                     + filename
+                     + "\"  -s \"LittleBrother detected motion on "
+                     + date_and_time
+                     + "\" -- "
+                     + user_email_address
+                     + " &";
+
+  int n = email.size();
+  char emailchar[n+1];
+
+  std::strcpy(emailchar, email.c_str());
+  FILE *mailpipe = popen(emailchar,"w"); //piping to command line
+      pclose(mailpipe);
+
+}
+
+/**
+* feed_change_email
+*
+* input: string new_email
+*
+* output: none
+*
+* A function that simply changes the email of the feed.
+*/
+void Feed::feed_change_email(std::string new_email)
+{
+  user_email_address = new_email;
+}
+
+
+/**
+* feed_change_folder
+*
+* input string new_folder
+*
+* output: none
+*
+* A function that simply changes the email of the feed.
+*/
+void Feed::feed_change_folder(std::string new_folder)
+{
+  user_folder = new_folder;
 }

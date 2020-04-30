@@ -32,7 +32,9 @@ public:
   bool refresh();
   void set_buttons();
   void set_device_id(int i);
-  void capture_iterate(int noise);
+  void email_notification(std::string filename, std::string date_and_time);
+  void feed_change_email(std::string new_email);
+  void feed_change_folder(std::string new_folder);
 
 private:
   bool noise, connected, catching_frames;
@@ -46,7 +48,9 @@ private:
   cv::Mat frame, empty_mat;
   cv::Mat resized;
   cv::VideoCapture cap;
-  sigc::connection signal;
+  sigc::connection signal, email_signal;
+  cv::VideoWriter video;
+  std::string user_email_address, user_folder;
 
 };
 

@@ -8,5 +8,10 @@ find_package( PkgConfig REQUIRED )
 pkg_check_modules(GTKMM REQUIRED gtkmm-2.4)
 
 
-add_executable(LittleBrother main.cpp lbwindow.cpp lbwindow.h feed.cpp feed.h)
+add_executable(LittleBrother
+    main.cpp
+    lbwindow.cpp
+    lbwindow.h
+    feed.cpp
+    feed.h)
 target_link_libraries(LittleBrother ${OpenCV_LIBS} ${GTKMM_LIBRARIES} opencv_core opencv_imgproc opencv_highgui opencv_videoio opencv_imgcodecs)
