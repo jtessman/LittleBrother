@@ -83,7 +83,7 @@ Feed::~Feed()
 * The file writing work used to be its own seperate function, but the function
 * needed to be able to save the current frame with the exact same date and time
 * as the video. Hence this function is longer than I'd like, but what can you
-* do. Returns true or false depending on whether or not the frame got caught. 
+* do. Returns true or false depending on whether or not the frame got caught.
 */
 bool Feed::refresh()
 {
@@ -157,8 +157,6 @@ bool Feed::refresh()
         //the millisecond that the in between lines 150 and 151.
         std::string video_filename = user_folder + str + ".avi";
         std::string picture_filename = user_folder + str + ".png";
-        std::cout << picture_filename << std::endl;
-        std::cout << video_filename << std::endl;
         cv::imwrite(picture_filename, written_frame),
         this->email_notification(picture_filename, str);
         video = cv::VideoWriter(video_filename, CV_FOURCC('M', 'J', 'P', 'G'), 30, cv::Size(width, height));
