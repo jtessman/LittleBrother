@@ -142,22 +142,21 @@ LittleBrother: CMakeFiles/LittleBrother.dir/main.cpp.o
 LittleBrother: CMakeFiles/LittleBrother.dir/lbwindow.cpp.o
 LittleBrother: CMakeFiles/LittleBrother.dir/feed.cpp.o
 LittleBrother: CMakeFiles/LittleBrother.dir/build.make
-LittleBrother: /usr/local/lib/libopencv_videostab.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_superres.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_stitching.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_shape.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_photo.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_objdetect.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_calib3d.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_features2d.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_ml.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_highgui.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_videoio.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_imgcodecs.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_flann.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_video.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_imgproc.so.3.1.0
-LittleBrother: /usr/local/lib/libopencv_core.so.3.1.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_dnn.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_gapi.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_ml.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_objdetect.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_photo.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_stitching.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_video.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_highgui.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_videoio.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_imgcodecs.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_calib3d.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_features2d.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_flann.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_imgproc.so.4.3.0
+LittleBrother: /home/kobi/Desktop/opencv-4.3.0/build/lib/libopencv_core.so.4.3.0
 LittleBrother: CMakeFiles/LittleBrother.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kobi/Desktop/LittleBrother/opencv/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable LittleBrother"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/LittleBrother.dir/link.txt --verbose=$(VERBOSE)

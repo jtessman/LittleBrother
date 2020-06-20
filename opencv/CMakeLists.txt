@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.1.0)
 link_directories(${GTKMM_LIBRARY_DIRS})
 include_directories(${GTKMM_INCLUDE_DIRS})
 project( LittleBrother )
-find_package( OpenCV REQUIRED )
+find_package( OpenCV 4 REQUIRED )
 
 find_package( PkgConfig REQUIRED )
 pkg_check_modules(GTKMM REQUIRED gtkmm-2.4)

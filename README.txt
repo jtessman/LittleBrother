@@ -1,8 +1,4 @@
-LittleBrother is a Linux-based security camera manager, made with gtkmm-2.4
-and opencv 3.1.0. It was compiled with the cmake-gui, with the flag WITH_GTK on
-and the flag WITH_GTK_2 off. That way it forces the linker to use GTK 3. If you
-get undefined errors when compiling and running, then you do not have all of
-the libraries that each of these libraries needs.
+LittleBrother is a Linux-based desktop application for monitoring security cameras, and was built with opencv 4.3.0. For some god-forsaken reason, it will not work unless you build and install opencv 4.3.0 with BOTH of the flags WITH_GTK and WITH_GTK_2. Currently trying to figure out how it can have dependencies from both of these. 
 
 This program uses mutt for email notifications:
 "sudo apt-get install mutt"

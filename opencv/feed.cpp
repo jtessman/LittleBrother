@@ -109,7 +109,7 @@ bool Feed::refresh()
 
       cv::Mat gray_frame, comp;
       int noise = 0;
-      cv::cvtColor(resized, gray_frame, CV_BGR2GRAY);
+      cv::cvtColor(resized, gray_frame, cv::COLOR_BGR2GRAY);
       pastframes.push(gray_frame);
       cv::absdiff(gray_frame, pastframes.front(), comp);
 
@@ -127,7 +127,7 @@ bool Feed::refresh()
       }
 
       cv::Mat written_frame;
-      cv::cvtColor(resized, written_frame, CV_BGR2RGB);
+      cv::cvtColor(resized, written_frame, cv::COLOR_BGR2RGB);
 
       if(catching_frames == true)
       {
@@ -159,7 +159,7 @@ bool Feed::refresh()
         std::string picture_filename = user_folder + str + ".png";
         cv::imwrite(picture_filename, written_frame),
         this->email_notification(picture_filename, str);
-        video = cv::VideoWriter(video_filename, CV_FOURCC('M', 'J', 'P', 'G'), 30, cv::Size(width, height));
+        video = cv::VideoWriter(video_filename, cv::VideoWriter::fourcc('M', 'J', 'P', 'G'), 30, cv::Size(width, height));
 
         std::cout  << str << std::endl;
 
