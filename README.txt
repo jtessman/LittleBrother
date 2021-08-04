@@ -1,4 +1,4 @@
-LittleBrother is a Linux-based desktop application for monitoring security cameras, and was built with opencv 4.3.0. For some god-forsaken reason, it will not work unless you build and install opencv 4.3.0 with BOTH of the flags WITH_GTK and WITH_GTK_2. Currently trying to figure out how it can have dependencies from both of these. 
+LittleBrother is a Linux-based desktop application for monitoring security cameras, and was built with opencv 4.3.0. For some reason, it will not work unless you build and install opencv 4.3.0 with BOTH of the flags WITH_GTK and WITH_GTK_2. Currently trying to figure out how it can have dependencies from both of these. 
 
 This program uses mutt for email notifications:
 "sudo apt-get install mutt"
